@@ -1,0 +1,25 @@
+.Indicator{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid black;
+    display: inline-block;
+    padding: 2px;
+}
+.bulb {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: green;
+    border: 1px solid black;
+    display: inline-block;
+    margin-left: 5px;
+    padding: 2px;
+}
+.on {    background-color: green;
+}
+
+.off {
+ background-color: red;
+}
+

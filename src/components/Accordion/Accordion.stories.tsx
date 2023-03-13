@@ -9,7 +9,9 @@ export default {
   component: Accordion,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 }
-
+const onClickItemHandler = (value:any) => {
+  alert(`clicked on ${value} item`)
+}
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: Story<AccordionPropsType> = (args) => <Accordion {...args} />;
 
@@ -18,7 +20,9 @@ export const Primary = Template.bind({});
 Primary.args = {
   titleValue: "string",
   collapsed: true,
-  onClick:()=>{}
+  onClick:()=>{},
+  items:[{title:"3",value:"1"},{title:"2",value: "2"},{title:"3",value:"3"}],
+  onClickOnItem:onClickItemHandler
 };
 
 export const ModeChanging: Story<AccordionPropsType> = (args) => {
@@ -29,4 +33,5 @@ export const ModeChanging: Story<AccordionPropsType> = (args) => {
 
 ModeChanging.args={
   titleValue: "ModeChanging",
-}
+  items:[{title:"5",value:"1"},{title:"2",value: "2"},{title:"3",value:"3"}],
+  onClickOnItem:onClickItemHandler}

@@ -1,7 +1,9 @@
-import React, {useRef, useState} from 'react';
+import React, {ChangeEvent, useRef, useState} from 'react';
 import {ComponentStory, ComponentMeta, Story} from '@storybook/react';
 
 import { Button } from './Button';
+import {action} from "@storybook/addon-actions";
+import {string} from "prop-types";
 
 
 export default {
@@ -41,3 +43,34 @@ GetValueInput.args={}
 export const FixedInput: ComponentStory<any> = (args) => <input value={"Yooooo"}/>;
 FixedInput.args={}
 
+export const ControlledInput:ComponentStory<any> = ()=>{
+  const [paramsValue, setParamsValue]=useState("")
+  const onChangeInputHandler = (e:ChangeEvent<HTMLInputElement>) => {
+    debugger;
+    setParamsValue(e.currentTarget.value)
+  }
+  return <input value={paramsValue} onChange={onChangeInputHandler}/>
+}
+
+export const ControlledCheckbox:ComponentStory<any> = ()=>{
+  const [paramsValue, setParamsValue]=useState(true)
+  const onChangeInputHandler = (e:ChangeEvent<HTMLInputElement>) => {
+    debugger;
+    setParamsValue(e.currentTarget.checked)
+  }
+  return <input type={"checkbox"} checked={paramsValue} onChange={action("changed")}/>
+}
+
+export const ControlledSelect:ComponentStory<any> = ()=>{
+  const [paramsValue, setParamsValue]=useState<string|undefined>("2")
+  const onChangeSelectHandler = (e:ChangeEvent<HTMLSelectElement>) => {
+    debugger;
+    setParamsValue(e.currentTarget.value)
+  }
+  return <select value={paramsValue} onChange={onChangeSelectHandler}>
+    <option>None</option>
+    <option value={"1"}>1</option>
+    <option value={"2"}>2</option>
+    <option value={"3"}>3</option>
+  </select>
+}

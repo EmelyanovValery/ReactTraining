@@ -1,0 +1,15 @@
+.select .main{
+    border: 1px blue solid;
+    display: inline-block;
+    min-height: 20px;
+    min-width: 40px;
+}
+
+.items{
+    border: 1px blue solid;
+    position: absolute;
+}
+
+.itemHover{
+    background: darkgray;
+}

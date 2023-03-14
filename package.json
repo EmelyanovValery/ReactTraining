@@ -20,20 +20,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-<<<<<<< HEAD
-    "eject": "react-scripts eject"
-=======
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
->>>>>>> bb8a33c (Initialize project using Create React App)
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-<<<<<<< HEAD
-=======
     ],
     "overrides": [
       {
@@ -44,7 +38,6 @@
           "import/no-anonymous-default-export": "off"
         }
       }
->>>>>>> bb8a33c (Initialize project using Create React App)
     ]
   },
   "browserslist": {
@@ -58,8 +51,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-<<<<<<< HEAD
-=======
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.5.15",
@@ -75,6 +66,5 @@
     "babel-plugin-named-exports-order": "^0.0.2",
     "prop-types": "^15.8.1",
     "webpack": "^5.75.0"
->>>>>>> bb8a33c (Initialize project using Create React App)
   }
 }

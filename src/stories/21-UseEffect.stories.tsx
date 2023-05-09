@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {ComponentStory} from '@storybook/react';
+import {log} from "util";
 
 export default {
     title: 'Use Effect',
@@ -49,5 +50,42 @@ export const Watch: ComponentStory<any> = () => {
         })}
     </div>
 };
+
+export const ResetUseEffect: ComponentStory<any> = () => {
+    console.log("Render components")
+    let [count, setCount]=useState(0)
+
+    useEffect(()=>{
+        console.log("render useEffect with "+count)
+        return ()=>{
+            console.log("Reset useEffect with "+count)
+        }
+    },[count])
+
+    return  <div>
+        Counter: {count} <button onClick={()=>{setCount(count+1)}}>+</button>
+    </div>
+};
+export const KeysTrackerExample: ComponentStory<any> = () => {
+    console.log("Render components")
+    let [text, setText]=useState("")
+
+    useEffect(()=>{
+        console.log("render useEffect with "+text)
+        let handler=(e:KeyboardEvent)=>{
+            console.log("Set text:"+text)
+            setText(value=>value+e.key)
+        }
+        window.addEventListener("keypress",handler)
+        return ()=>{
+            window.removeEventListener("keypress",handler)
+        }
+    },[text])
+
+    return  <div>
+        Text: {text}
+    </div>
+};
+
 
 

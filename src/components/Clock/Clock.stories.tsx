@@ -11,7 +11,11 @@ const Template: ComponentStory<any> = (args) => {
     return <Clock {...args}/>
 }
 
-export const Example1 = Template.bind({})
-Example1.args={
-
+export const Digital = Template.bind({})
+Digital.args={
+    mode:"digital"
+}
+export const Analog = Template.bind({})
+Analog.args={
+    mode:"analog"
 }
